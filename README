@@ -1,0 +1,31 @@
+Base on libpopt
+
+$ ./uart_test > README 2>&1
+Usage: uart_test [-rwev?] [-p|--port STRING] [-t|--type STRING]
+        [-s|--str STRING] [-H|--hex INT] [-D|--data INT] [-S|--stop INT]
+        [-P|--parity STRING] [-B|--baudrate INT] [-l|--loop INT] [-r|--read]
+        [-w|--write] [-e|--echo] [-v|--verbose] [-?|--help] [--usage]
+
+$ ./uart_test --help >> README 2>&1
+Usage: uart_test [OPTION...]
+  -p, --port=STRING       tty device, serial port (default: "/dev/ttySAC0")
+  -t, --type=STRING       test type, ascii or hex (default: "ascii")
+  -s, --str=STRING        string for ascii test (default: "hello world!")
+  -H, --hex=INT           data for hex test (default: 48)
+  -D, --data=INT          data bits, 5,6,7,8 (default: 8)
+  -S, --stop=INT          stop bits, 1,2 (default: 1)
+  -P, --parity=STRING     parity, 'o'|'O', 'n'|'N', 'e'|'E' (default: "N")
+  -B, --baudrate=INT      port baudrate,
+                          1200,1800,2400,4800,9600,19200,38400,57600,115200,230400,460800 (default: 115200)
+  -l, --loop=INT          loop for write test, 0 for unlimited (default: 0)
+  -r, --read              read test
+  -w, --write             write test
+  -e, --echo              echo test
+  -v, --verbose           print verbose information
+
+Help options:
+  -?, --help              Show this help message
+  --usage                 Display brief usage message
+
+*Note*
+  need to connect the TXD pin with the RXD pin of the port to carry out the echo test.
